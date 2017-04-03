@@ -1,0 +1,34 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'OpenGL Panel'
+  ClientHeight = 510
+  ClientWidth = 365
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 365.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label1: TLabel
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 305.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Cross platform TGLPanel for FMX (c)2017 Execute SARL'
+      TabOrder = 0
+    end
+  end
+  object Timer1: TTimer
+    Interval = 40
+    OnTimer = Timer1Timer
+    Left = 192
+    Top = 192
+  end
+end
