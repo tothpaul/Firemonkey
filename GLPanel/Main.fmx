@@ -3,7 +3,7 @@ object MainForm: TMainForm
   Top = 0
   Caption = 'OpenGL Panel'
   ClientHeight = 510
-  ClientWidth = 365
+  ClientWidth = 466
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -11,7 +11,7 @@ object MainForm: TMainForm
   DesignerMasterStyle = 0
   object Panel1: TPanel
     Align = Top
-    Size.Width = 365.000000000000000000
+    Size.Width = 466.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
@@ -29,5 +29,30 @@ object MainForm: TMainForm
     OnTimer = Timer1Timer
     Left = 192
     Top = 192
+  end
+  object Panel2: TPanel
+    Align = Left
+    Position.Y = 49.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 391.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+  end
+  object Panel3: TPanel
+    Align = Bottom
+    Position.Y = 440.000000000000000000
+    Size.Width = 466.000000000000000000
+    Size.Height = 70.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object Panel4: TPanel
+    Align = Right
+    Position.X = 413.000000000000000000
+    Position.Y = 49.000000000000000000
+    Size.Width = 53.000000000000000000
+    Size.Height = 391.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
   end
 end
