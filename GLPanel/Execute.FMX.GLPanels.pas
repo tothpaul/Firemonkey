@@ -55,7 +55,7 @@ uses
 
 {$IFDEF MACOS}
 uses
- PH.Presentation.Mac;
+ Execute.Presentation.Mac;
 {$ENDIF}
 
 { TGLPanel }
