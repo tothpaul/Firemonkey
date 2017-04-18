@@ -18,7 +18,6 @@ uses
   FMX.Controls.Win,
   FMX.Presentation.Factory,
   FMX.Presentation.Win,
- // Execute.FMX.GLPanels,
   Execute.FMX.GLPanels.Types;
 
 type
