@@ -132,7 +132,6 @@ uses
   Macapi.OpenGL,
   FMX.Platform.Mac,
   FMX.Surfaces,
-
   FMX.Presentation.Factory,
   FMX.Helpers.Mac,
   FMX.Consts;
@@ -158,9 +157,7 @@ begin
       FParentView := GetParentView;
       if FParentView <> nil then
         FParentView.addSubview(NSView(Super));
-
     end;
-
 end;
 
 constructor TMacNativeView.Create(const AModel: TDataModel; const AControl: TControl);
@@ -211,17 +208,11 @@ begin
 end;
 
 function TMacNativeView.GetViewFrame: NSRect;
-var
-  AbsoluteRect: TRectF;
 begin
   if HasControl then
-    begin
-      AbsoluteRect := FControl.AbsoluteRect;
-     //  AbsoluteRect.TopLeft := FControl.LocalToAbsolute(TPointF.Zero);
-      Result := CGRectFromRect(AbsoluteRect);
-    end
+      Result :=   Nsrect.Create(FControl.AbsoluteRect)
   else
-    Result := CGRectMake(50, 50, 300, 600);
+    Result := CGRectMake(0, 0, 50, 50);
 end;
 
 function TMacNativeView.HasControl: Boolean;
@@ -237,7 +228,6 @@ end;
 
 procedure TMacNativeView.SetSize(const ASize: TSizeF);
 var
-  ViewRect: NSRect;
   ViewSize: NSSize;
 begin
   FSize := ASize;
@@ -389,8 +379,14 @@ end;
 procedure TMacNativeView.UpdateOrderAndBounds;
 var
   temp: NSRect;
+  winrect : NSRect;
 begin
   temp := GetViewFrame;
+  if  GetParentView <> nil then
+ begin
+   winrect := GetParentView.frame;
+  temp.origin.y := winrect.size.height -  (temp.origin.y +  temp.size.height);
+ end;
   View.setFrame(temp);
   Resized;
 end;
@@ -408,12 +404,10 @@ end;
 
 procedure TMacNativeView.ResizeGL;
 
-  procedure perspective(fovy, aspect, zNear, zFar: double);
+  procedure perspective(const fovy, aspect, zNear, zFar: double);
   var
     xmin, xmax, ymin, ymax: double;
   begin
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
     ymax := zNear * tan(fovy * PI / 360.0);
     ymin := - ymax;
     xmin := ymin * aspect;
@@ -425,7 +419,7 @@ var
   LSize: TSizeF;
 
 begin
-  LSize := FControlSize;
+  LSize :=   GetViewFrame.size.ToSizeF;
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity;
   if LSize.cy <> 0 then
@@ -433,8 +427,6 @@ begin
 
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity;
-  glDepthMask(1);
-  glViewport(0, 0, Trunc(LSize.cx), Trunc(LSize.cy));
 end;
 
 initialization

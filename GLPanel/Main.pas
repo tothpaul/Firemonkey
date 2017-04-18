@@ -20,6 +20,9 @@ type
     Timer1: TTimer;
     Panel1: TPanel;
     Label1: TLabel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Panel2Resize(Sender: TObject);
