@@ -22,7 +22,6 @@ object MainForm: TMainForm
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       Text = 'Cross platform TGLPanel for FMX (c)2017 Execute SARL'
-      TabOrder = 0
     end
   end
   object Timer1: TTimer
@@ -30,5 +29,21 @@ object MainForm: TMainForm
     OnTimer = Timer1Timer
     Left = 192
     Top = 192
+  end
+  object Panel2: TPanel
+    Align = Left
+    Position.Y = 49.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 341.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+  end
+  object Panel3: TPanel
+    Align = Bottom
+    Position.Y = 390.000000000000000000
+    Size.Width = 365.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
   end
 end

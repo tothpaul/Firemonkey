@@ -444,7 +444,7 @@ begin
   Result := Result div Info.Denom;
 end;
 
-function GetTickCount: Cardinal; inline;
+function GetTickCount: Cardinal; //inline;
 begin
   Result := AbsoluteToNanoseconds(MachAbsoluteTime) div 1000000;
 end;
