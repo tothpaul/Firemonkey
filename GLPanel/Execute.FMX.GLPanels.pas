@@ -14,24 +14,11 @@ uses
   FMX.Presentation.Messages,
   FMX.Controls.Model,
   Execute.FMX.GLPanels.Types,
-  {$IFDEF MACOS}
- // Ph.GlPanel,
-{$ENDIF}
   FMX.Controls.Presentation;
 
 type
 // the published GLPanel component
-
-  {$IFDEF MACOS2}
-    TGLPanel = class(TMacGlPanel)
-  {$ELSE}
    TGLPanel = class(TPresentedControl)
-  {$ENDIF}
-  const
-  // link to the registered presentation (TPresentationProxyFactory.Current.Register)
-    STYLE_NAME  = 'GLPanel-style';
-  // Presentation Messages
-    PM_INVALIDE = PM_USER + 1;
   private
   // could be a [weak] reference, [unsafe] is fine also, but the value of FModel could be invalide
     [unsafe] FModel: TGLPanelModel;
@@ -89,7 +76,7 @@ end;
 
 function TGLPanel.DefinePresentationName: string;
 begin
-  Result := STYLE_NAME;
+  Result :=  TGLPanelModel.STYLE_NAME;
 end;
 
 function TGLPanel.GetGLEvent(Index: TGLPanelModel.TGLEvent): TNotifyEvent;
@@ -104,7 +91,7 @@ end;
 
 procedure TGLPanel.Invalidate;
 begin
-  PresentationProxy.SendMessage(PM_INVALIDE);
+  PresentationProxy.SendMessage(TGLPanelModel.PM_INVALIDE);
 end;
 
 

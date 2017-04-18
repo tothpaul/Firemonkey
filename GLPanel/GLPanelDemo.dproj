@@ -6,7 +6,7 @@
         <MainSource>GLPanelDemo.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">OSX32</Platform>
         <TargetedPlatforms>7</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -332,10 +332,6 @@
         <DCCReference Include="Execute.FMX.GLPanels.pas"/>
         <DCCReference Include="Execute.CubeMan.pas"/>
         <DCCReference Include="Execute.CrossGL.pas"/>
-        <DCCReference Include="testGl.pas">
-            <Form>GlView</Form>
-            <FormType>fmx</FormType>
-        </DCCReference>
         <DCCReference Include="Execute.FMX.GLPanels.Types.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -383,8 +379,10 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\GLPanelDemo.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements">
+                <DeployFile LocalName="OSX32\Debug\GLPanelDemo.rsm" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <RemoteName>GLPanelDemo.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -416,13 +414,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OSX32\Debug\GLPanelDemo.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS\</RemoteDir>
-                        <RemoteName>GLPanelDemo.rsm</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\18.0\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="OSX32">
                         <RemoteDir>Assets\</RemoteDir>
@@ -431,6 +422,11 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgsqlite3.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="OSX32\Debug\GLPanelDemo.entitlements" Configuration="Debug" Class="ProjectOSXEntitlements">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
                     </Platform>
