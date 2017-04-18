@@ -20,6 +20,8 @@ type
     Timer1: TTimer;
     Panel1: TPanel;
     Label1: TLabel;
+    Panel2: TPanel;
+    Panel3: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -62,7 +64,7 @@ end;
 
 procedure TMainForm.Timer1Timer(Sender: TObject);
 begin
-  GLPanel.Invalidate;
+  GLPanel.Repaint;
 end;
 
 end.
