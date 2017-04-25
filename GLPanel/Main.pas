@@ -20,8 +20,12 @@ type
     Timer1: TTimer;
     Panel1: TPanel;
     Label1: TLabel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure Panel2Resize(Sender: TObject);
   private
     { Déclarations privées }
     GLPanel: TGLPanel;
@@ -47,7 +51,9 @@ begin
   GLPanel.OnGLSetup := GLSetup;
   GLPanel.OnGLPaint := GLPaint;
   GLPanel.Parent := Self;
+  GLPanel.OnResize :=  Panel2Resize;
   GLPanel.Align := TAlignLayout.Client;
+
 end;
 
 procedure TMainForm.GLSetup(Sender: TObject);
@@ -63,6 +69,11 @@ end;
 procedure TMainForm.Timer1Timer(Sender: TObject);
 begin
   GLPanel.Invalidate;
+end;
+
+procedure TMainForm.Panel2Resize(Sender: TObject);
+begin
+  ;
 end;
 
 end.

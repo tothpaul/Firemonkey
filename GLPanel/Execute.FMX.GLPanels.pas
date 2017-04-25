@@ -10,31 +10,15 @@ interface
 
 uses
   System.Classes,
+  FMX.Types,
+  FMX.Presentation.Messages,
   FMX.Controls.Model,
+  Execute.FMX.GLPanels.Types,
   FMX.Controls.Presentation;
 
 type
-// the connection between platform specific presentation(ie TGLPanelWin) and TGLPanel
-  TGLPanelModel = class(TDataModel)
-  type
-    TGLEvent = (
-      glSetup,
-      glResize,
-      glPaint
-    );
-  private
-    FEvents: array[TGLEvent] of TNotifyEvent;
-  public
-    function OnEvent(Event: TGLEvent): Boolean;
-  end;
-
 // the published GLPanel component
-  TGLPanel = class(TPresentedControl)
-  const
-  // link to the registered presentation (TPresentationProxyFactory.Current.Register)
-    STYLE_NAME  = 'GLPanel-style';
-  // Presentation Messages
-    PM_INVALIDE = PM_USER + 1;
+   TGLPanel = class(TPresentedControl)
   private
   // could be a [weak] reference, [unsafe] is fine also, but the value of FModel could be invalide
     [unsafe] FModel: TGLPanelModel;
@@ -46,6 +30,7 @@ type
     function DefineModelClass: TDataModelClass; override;
   // link to presentation (by name)
     function DefinePresentationName: string; override;
+
   public
     constructor Create(AOwner: TComponent); override;
   // refresh the OpenGL panel
@@ -65,16 +50,13 @@ implementation
 uses
 // Windows presentation for TGLPanel
   Execute.FMX.GLPanels.Win;
+
 {$ENDIF}
 
-{ TGLPanelModel }
-
-function TGLPanelModel.OnEvent(Event: TGLEvent): Boolean;
-begin
-  Result := Assigned(FEvents[Event]);
-  if Result then
-    FEvents[Event](Owner);
-end;
+{$IFDEF MACOS}
+uses
+ Execute.Presentation.Mac;
+{$ENDIF}
 
 { TGLPanel }
 
@@ -94,22 +76,23 @@ end;
 
 function TGLPanel.DefinePresentationName: string;
 begin
-  Result := STYLE_NAME;
+  Result :=  TGLPanelModel.STYLE_NAME;
 end;
 
 function TGLPanel.GetGLEvent(Index: TGLPanelModel.TGLEvent): TNotifyEvent;
 begin
-  Result := FModel.FEvents[Index];
+  Result := FModel.Events[Index];
 end;
 
 procedure TGLPanel.SetGLEvent(Index: TGLPanelModel.TGLEvent; Value: TNotifyEvent);
 begin
-  FModel.FEvents[Index] := Value;
+  FModel.Events[Index] := Value;
 end;
 
 procedure TGLPanel.Invalidate;
 begin
-  PresentationProxy.SendMessage(PM_INVALIDE);
+  PresentationProxy.SendMessage(TGLPanelModel.PM_INVALIDE);
 end;
+
 
 end.

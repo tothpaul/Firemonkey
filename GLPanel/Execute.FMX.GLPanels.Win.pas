@@ -18,7 +18,7 @@ uses
   FMX.Controls.Win,
   FMX.Presentation.Factory,
   FMX.Presentation.Win,
-  Execute.FMX.GLPanels;
+  Execute.FMX.GLPanels.Types;
 
 type
   TWinGLPanel = class(TWinPresentation)
@@ -33,7 +33,7 @@ type
     procedure WMEraseBkGnd(var Msg: TMessage); message WM_ERASEBKGND;
     procedure WMPaint(var Msg: TMessage); message WM_PAINT;
   // Presentation messages
-    procedure PMInvalidate(var Msg: TDispatchMessage); message TGLPanel.PM_INVALIDE;
+    procedure PMInvalidate(var Msg: TDispatchMessage); message TGLPanelModel.PM_INVALIDE;
   private
    [unsafe] FModel: TGLPanelModel;
   protected
@@ -204,7 +204,7 @@ begin
 end;
 
 initialization
-  TPresentationProxyFactory.Current.Register(TGLPanel.STYLE_NAME, TWinPresentationProxy<TWinGLPanel>);
+  TPresentationProxyFactory.Current.Register(TGLPanelModel.STYLE_NAME, TWinPresentationProxy<TWinGLPanel>);
 finalization
-  TPresentationProxyFactory.Current.Unregister(TGLPanel.STYLE_NAME, TWinPresentationProxy<TWinGLPanel>);
+  TPresentationProxyFactory.Current.Unregister(TGLPanelModel.STYLE_NAME, TWinPresentationProxy<TWinGLPanel>);
 end.
