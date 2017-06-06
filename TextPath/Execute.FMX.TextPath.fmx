@@ -1,0 +1,149 @@
+object TextPathEditor: TTextPathEditor
+  Left = 0
+  Top = 0
+  ClientHeight = 372
+  ClientWidth = 627
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 627.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object edText: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 2
+      Text = 'Sample Text'
+      Position.X = 208.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 406.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = edTextChange
+      object Label2: TLabel
+        Position.X = -47.000000000000000000
+        Size.Width = 40.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Text'
+        TabOrder = 0
+      end
+    end
+    object Label1: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Font'
+      TabOrder = 0
+    end
+    object edSize: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Text = '1024'
+      Position.X = 96.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = edTextChange
+      object Label3: TLabel
+        Position.X = -32.000000000000000000
+        Size.Width = 25.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Size'
+        TabOrder = 0
+      end
+    end
+  end
+  object Path: TPath
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 464.000000000000000000
+    Size.Height = 277.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lbFonts: TListBox
+    Align = Left
+    Position.Y = 41.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 287.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    OnChange = edTextChange
+    Viewport.Width = 149.000000000000000000
+    Viewport.Height = 283.000000000000000000
+  end
+  object Layout2: TLayout
+    Align = Bottom
+    Position.Y = 328.000000000000000000
+    Size.Width = 627.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Button1: TButton
+      Align = Right
+      ModalResult = 1
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 419.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 105.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'OK'
+    end
+    object Button2: TButton
+      Align = Right
+      ModalResult = 2
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 534.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 88.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Cancel'
+    end
+    object cbBold: TCheckBox
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Bold'
+      OnChange = edTextChange
+    end
+    object cbItalic: TCheckBox
+      Position.X = 88.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Italic'
+      OnChange = edTextChange
+    end
+  end
+end
