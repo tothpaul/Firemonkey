@@ -34,8 +34,7 @@ package Execute.FMX.TextPathDesigner;
 requires
   rtl,
   DesignIDE,
-  fmx,
-  Execute.FMX;
+  fmx;
 
 contains
   Execute.FMX.TextPath in 'Execute.FMX.TextPath.pas' {TextPathEditor},

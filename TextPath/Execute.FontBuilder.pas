@@ -16,7 +16,7 @@ uses
   Fmx.Graphics;
 
 procedure GetFontList(List: TStrings);
-procedure BuildText(const Text, FontName: string; Size: Integer; Style: TFontStyle; Path: TPathData);
+procedure BuildText(const Text, FontName: string; Size: Integer; Style: TFontStyles; Path: TPathData);
 
 implementation
 
@@ -124,7 +124,7 @@ begin
   Path.ClosePath;
 end;
 
-procedure BuildText(const Text, FontName: string; Size: Integer; Style: TFontStyle; Path: TPathData);
+procedure BuildText(const Text, FontName: string; Size: Integer; Style: TFontStyles; Path: TPathData);
 var
   LogFont   : TLogFont;
   Font      : HFont;
