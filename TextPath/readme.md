@@ -1,4 +1,4 @@
-#TextPath
+# TextPath
 
 Execute.FMX.TextPathDesigner is a Delphi package that add a "Text Path..." popup option to the FMX TPath component.
 

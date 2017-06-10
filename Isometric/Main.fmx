@@ -1,0 +1,13 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'Isometric view under Firemonkey for Delphi Tokyo'
+  Color = xFE000000
+  ClientHeight = 571
+  ClientWidth = 933
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnRender = Form3DRender
+  DesignerMasterStyle = 0
+end
