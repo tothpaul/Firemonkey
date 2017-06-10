@@ -36,7 +36,7 @@ procedure TMainForm.Form3DRender(Sender: TObject; Context: TContext3D);
 var
   x, y: Integer;
 begin
-  // Unseing cs2DScene allows to replace the Projection Martrix by the RendeToMatrix matrix !
+  // Using cs2DScene allows to replace the Projection Martrix by the RendeToMatrix matrix !
   Context.SetContextState(TContextState.cs2DScene);
 
   // General settings
