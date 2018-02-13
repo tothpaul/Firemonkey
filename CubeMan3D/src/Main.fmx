@@ -1,0 +1,277 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  Color = xFFFFFFFE
+  ClientHeight = 653
+  ClientWidth = 652
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMobile = True
+  DesignerWidth = 652
+  DesignerHeight = 653
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object body: TRoundCube
+    Position.X = 0.001703739166259766
+    Position.Y = 25.150325775146480000
+    Position.Z = 100.000000000000000000
+    RotationAngle.Y = 30.000000000000000000
+    Width = 15.000000000000000000
+    Height = 17.000000000000000000
+    Depth = 10.000000000000000000
+    MaterialSource = LightMaterialSource1
+    Quanternion = '(0,0.258819043636322,0,0.965925812721252)'
+    object head: TRoundCube
+      Position.Y = -15.000000000000000000
+      Width = 10.000000000000000000
+      Height = 10.000000000000000000
+      Depth = 10.000000000000000000
+      MaterialSource = LightMaterialSource1
+    end
+    object Shoulder2: TDummy
+      Position.X = 7.500000000000000000
+      Position.Y = -8.500000000000000000
+      RotationAngle.Z = 315.000000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Quanternion = 
+        '(-4.92974940868862E-8,-4.31467590544798E-8,-0.382683396339417,0.' +
+        '923879444599152)'
+      object Arm2: TRoundCube
+        Position.Y = 5.000000000000000000
+        Width = 6.000000000000000000
+        Height = 10.000000000000000000
+        Depth = 6.000000000000000000
+        MaterialSource = LightMaterialSource1
+        object Elbow2: TDummy
+          Position.Y = 5.000000000000000000
+          Width = 1.000000000000000000
+          Height = 1.000000000000000000
+          Depth = 1.000000000000000000
+          object Forearm2: TRoundCube
+            Position.Y = 5.000000000000000000
+            Width = 6.000000000000000000
+            Height = 10.000000000000000000
+            Depth = 6.000000000000000000
+            MaterialSource = LightMaterialSource1
+          end
+          object Forearm2Animation: TFloatAnimation
+            AutoReverse = True
+            Enabled = True
+            Duration = 0.500000000000000000
+            Loop = True
+            PropertyName = 'RotationAngle.X'
+            StartValue = 0.000000000000000000
+            StopValue = -90.000000000000000000
+          end
+        end
+      end
+      object Arm2Animation: TFloatAnimation
+        AutoReverse = True
+        Enabled = True
+        Duration = 1.000000000000000000
+        Loop = True
+        PropertyName = 'RotationAngle.X'
+        StartValue = -80.000000000000000000
+        StopValue = 80.000000000000000000
+      end
+    end
+    object Shoulder1: TDummy
+      Position.X = -7.500000000000000000
+      Position.Y = -8.500000000000000000
+      RotationAngle.Z = 45.000000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Quanternion = '(0,0,0.382683455944061,0.923879504203796)'
+      object Arm1: TRoundCube
+        Position.Y = 5.000000000000000000
+        Width = 6.000000000000000000
+        Height = 10.000000000000000000
+        Depth = 6.000000000000000000
+        MaterialSource = LightMaterialSource1
+        object Elbow1: TDummy
+          Position.Y = 5.000000000000000000
+          Width = 1.000000000000000000
+          Height = 1.000000000000000000
+          Depth = 1.000000000000000000
+          object Forearm1: TRoundCube
+            Position.Y = 5.000000000000000000
+            Width = 6.000000000000000000
+            Height = 10.000000000000000000
+            Depth = 6.000000000000000000
+            MaterialSource = LightMaterialSource1
+          end
+          object Forearm1Animation: TFloatAnimation
+            AutoReverse = True
+            Enabled = True
+            Duration = 0.500000000000000000
+            Loop = True
+            PropertyName = 'RotationAngle.X'
+            StartValue = 0.000000000000000000
+            StopValue = -90.000000000000000000
+          end
+        end
+      end
+      object Arm1Animation: TFloatAnimation
+        AutoReverse = True
+        Enabled = True
+        Duration = 1.000000000000000000
+        Loop = True
+        PropertyName = 'RotationAngle.X'
+        StartValue = 80.000000000000000000
+        StopValue = -80.000000000000000000
+      end
+    end
+    object Pelvis1: TDummy
+      Position.X = -5.000000000000000000
+      Position.Y = 8.500000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      object Thigh1: TRoundCube
+        Position.Y = 5.000000000000000000
+        Width = 6.000000000000000000
+        Height = 10.000000000000000000
+        Depth = 6.000000000000000000
+        MaterialSource = LightMaterialSource1
+        object Knee1: TDummy
+          Position.Y = 5.000000000000000000
+          Width = 1.000000000000000000
+          Height = 1.000000000000000000
+          Depth = 1.000000000000000000
+          object Leg1: TRoundCube
+            Position.Y = 5.000000000000000000
+            Width = 6.000000000000000000
+            Height = 10.000000000000000000
+            Depth = 6.000000000000000000
+            MaterialSource = LightMaterialSource1
+          end
+          object Leg1KeyAnimation: TFloatKeyAnimation
+            Enabled = True
+            Duration = 2.000000000000000000
+            Keys = <
+              item
+              end
+              item
+                Key = 0.500000000000000000
+              end
+              item
+                Key = 0.800000011920929000
+                Value = 120.000000000000000000
+              end
+              item
+                Key = 1.000000000000000000
+              end>
+            Loop = True
+            PropertyName = 'RotationAngle.X'
+            StartFromCurrent = False
+          end
+        end
+      end
+      object Thigh1Animation: TFloatAnimation
+        AutoReverse = True
+        Enabled = True
+        Duration = 1.000000000000000000
+        Loop = True
+        PropertyName = 'RotationAngle.X'
+        StartValue = -45.000000000000000000
+        StopValue = 45.000000000000000000
+      end
+    end
+    object Pelvis2: TDummy
+      Position.X = 5.000000000000000000
+      Position.Y = 8.500000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      object Thigh2: TRoundCube
+        Position.Y = 5.000000000000000000
+        Width = 6.000000000000000000
+        Height = 10.000000000000000000
+        Depth = 6.000000000000000000
+        MaterialSource = LightMaterialSource1
+        object Knee2: TDummy
+          Position.Y = 5.000000000000000000
+          Width = 1.000000000000000000
+          Height = 1.000000000000000000
+          Depth = 1.000000000000000000
+          object Leg2: TRoundCube
+            Position.Y = 5.000000000000000000
+            Width = 6.000000000000000000
+            Height = 10.000000000000000000
+            Depth = 6.000000000000000000
+            MaterialSource = LightMaterialSource1
+          end
+          object Leg2KeyAnimation: TFloatKeyAnimation
+            Enabled = True
+            Duration = 2.000000000000000000
+            Keys = <
+              item
+              end
+              item
+                Key = 0.300000011920929000
+                Value = 120.000000000000000000
+              end
+              item
+                Key = 0.500000000000000000
+              end
+              item
+                Key = 1.000000000000000000
+              end>
+            Loop = True
+            PropertyName = 'RotationAngle.X'
+            StartFromCurrent = False
+          end
+        end
+      end
+      object Thigh2Animation: TFloatAnimation
+        AutoReverse = True
+        Enabled = True
+        Duration = 1.000000000000000000
+        Loop = True
+        PropertyName = 'RotationAngle.X'
+        StartValue = 60.000000000000000000
+        StopValue = -60.000000000000000000
+      end
+    end
+    object TurnAround: TFloatAnimation
+      Enabled = True
+      Duration = 15.000000000000000000
+      Loop = True
+      PropertyName = 'RotationAngle.Y'
+      StartValue = 0.000000000000000000
+      StopValue = 360.000000000000000000
+    end
+  end
+  object Light1: TLight
+    Color = claWhite
+    LightType = Directional
+    SpotCutOff = 180.000000000000000000
+    Position.X = -7.463888168334961000
+    Position.Y = 14.385499954223630000
+    Position.Z = 10.000011444091800000
+    RotationAngle.X = 6.787704467773438000
+    RotationAngle.Y = 15.729310035705570000
+    RotationAngle.Z = 359.635833740234400000
+    Width = 1.000000000000000000
+    Height = 1.000000000000000000
+    Depth = 1.000000000000000000
+    Quanternion = 
+      '(0.0582080632448196,0.136406436562538,-0.0112425368279219,0.9888' +
+      '77713680267)'
+  end
+  object LightMaterialSource1: TLightMaterialSource
+    Diffuse = xFF7F7FFF
+    Ambient = xFF00007F
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 184
+    Top = 280
+  end
+end
