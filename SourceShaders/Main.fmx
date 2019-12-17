@@ -1,0 +1,29 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = Form3DCreate
+  DesignerMasterStyle = 0
+  object Timer1: TTimer
+    Interval = 33
+    OnTimer = Timer1Timer
+  end
+  object Plane1: TPlane
+    Width = 10.295813560485840000
+    Height = 9.901241302490234000
+    Depth = 0.001000000047497451
+    object FloatAnimation1: TFloatAnimation
+      Enabled = True
+      Duration = 5.000000000000000000
+      Loop = True
+      PropertyName = 'RotationAngle.X'
+      StartValue = 0.000000000000000000
+      StopValue = 360.000000000000000000
+    end
+  end
+end
