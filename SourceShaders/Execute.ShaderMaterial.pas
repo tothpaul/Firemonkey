@@ -10,6 +10,7 @@ interface
 uses
   System.SysUtils,
   System.Classes,
+  System.Math.Vectors,
   FMX.Types3D,
   FMX.Materials,
   FMX.MaterialSources;
@@ -132,6 +133,12 @@ begin
 end;
 {$ENDIF}
 
+{$IFDEF OSX}
+uses
+  Macapi.CocoaTypes,
+  Macapi.OpenGL;
+{$ENDIF}
+
 { TShaderMaterial }
 
 const
@@ -203,11 +210,16 @@ begin
 end;
 
 procedure TShaderMaterial.DoApply(const Context: TContext3D);
+{$IFNDEF MSWINDOWS}
+var
+  M: TMatrix3D;
+{$ENDIF}
 begin
   inherited;
 {$IFNDEF MSWINDOWS}
 // https://quality.embarcadero.com/browse/RSP-16323
-  glUniformMatrix4fv(MVPMatrix.Index, 1, GL_FALSE, @Context.CurrentModelViewProjectionMatrix.M);
+  M := Context.CurrentModelViewProjectionMatrix;
+  glUniformMatrix4fv(MVPMatrix.Index, 1, GL_FALSE, @M.m11);
 {$ENDIF}
   if Assigned(FOnApply) then
     FOnApply(Self, Context);

@@ -2,6 +2,8 @@
 
 Sample FMX component to use a Shader as a MaterialSource
 
+tested with Dephi Rio 10.3.3 under Windows, OSX and Android !
+
 you can use directly either a HLSL (DirectX under Windows) or GLSL (OpenGL on other platforms) source code.
 ```
   const

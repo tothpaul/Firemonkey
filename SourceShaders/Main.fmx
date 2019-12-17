@@ -1,9 +1,9 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 480
-  ClientWidth = 640
+  Caption = 'TShaderMaterial demo (c)2019 Execute SARL'
+  ClientHeight = 566
+  ClientWidth = 876
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -13,15 +13,60 @@ object Form1: TForm1
     Interval = 33
     OnTimer = Timer1Timer
   end
+  object Plane2: TPlane
+    Position.X = -6.673500537872314000
+    Position.Y = -3.909884214401245000
+    RotationAngle.X = 340.000000000000000000
+    Width = 9.418337821960449000
+    Height = 6.704707622528076000
+    Depth = 0.001000000047497451
+    Quanternion = '(0.173648297786713,0,0,-0.984807729721069)'
+  end
+  object Plane3: TPlane
+    Position.X = -8.095270156860352000
+    Position.Y = 3.663649082183838000
+    RotationAngle.X = 340.000000000000000000
+    Width = 4.736832618713379000
+    Height = 4.300696372985840000
+    Depth = 0.001000000047497451
+    Quanternion = '(0.173648297786713,0,0,-0.984807729721069)'
+  end
+  object Plane4: TPlane
+    Position.X = 5.363698959350586000
+    Position.Y = 5.243049144744873000
+    RotationAngle.X = 340.000000000000000000
+    Width = 9.418337821960449000
+    Height = 6.704707622528076000
+    Depth = 0.001000000047497451
+    Quanternion = '(0.173648297786713,0,0,-0.984807729721069)'
+  end
   object Plane1: TPlane
-    Width = 10.295813560485840000
-    Height = 9.901241302490234000
+    Position.X = 4.807112693786621000
+    Position.Y = -2.776535034179688000
+    Width = 10.629789352416990000
+    Height = 7.298233985900879000
     Depth = 0.001000000047497451
     object FloatAnimation1: TFloatAnimation
       Enabled = True
       Duration = 5.000000000000000000
       Loop = True
       PropertyName = 'RotationAngle.X'
+      StartValue = 0.000000000000000000
+      StopValue = 360.000000000000000000
+    end
+    object FloatAnimation2: TFloatAnimation
+      Enabled = True
+      Duration = 10.000000000000000000
+      Loop = True
+      PropertyName = 'RotationAngle.Y'
+      StartValue = 0.000000000000000000
+      StopValue = 360.000000000000000000
+    end
+    object FloatAnimation3: TFloatAnimation
+      Enabled = True
+      Duration = 20.000000000000000000
+      Loop = True
+      PropertyName = 'RotationAngle.Z'
       StartValue = 0.000000000000000000
       StopValue = 360.000000000000000000
     end
