@@ -138,6 +138,10 @@ uses
   Macapi.CocoaTypes,
   Macapi.OpenGL;
 {$ENDIF}
+{$IFDEF ANDROID}
+uses
+  Androidapi.Gles2;
+{$ENDIF}
 
 { TShaderMaterial }
 
