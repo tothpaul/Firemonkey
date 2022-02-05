@@ -1,0 +1,373 @@
+object Main: TMain
+  Left = 0
+  Top = 0
+  Caption = 'Puzzle Solver'
+  ClientHeight = 583
+  ClientWidth = 1035
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Viewport3D1: TViewport3D
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 16.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 889.000000000000000000
+    Size.Height = 463.000000000000000000
+    Size.PlatformDefault = False
+    OnMouseDown = Viewport3D1MouseDown
+    OnMouseMove = Viewport3D1MouseMove
+    object Dummy1: TDummy
+      Scale.X = 2.000000000000000000
+      Scale.Y = 2.000000000000000000
+      Scale.Z = 2.000000000000000000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      object FloatAnimation1: TFloatAnimation
+        Enabled = True
+        Duration = 10.000000000000000000
+        Loop = True
+        PropertyName = 'RotationAngle.X'
+        StartValue = 0.000000000000000000
+        StopValue = 359.000000000000000000
+      end
+      object Dummy2: TDummy
+        RotationAngle.Y = 20.000000000000000000
+        Width = 1.000000000000000000
+        Height = 1.000000000000000000
+        Depth = 1.000000000000000000
+        Quanternion = '(0,0.173648178577423,0,0.984807729721069)'
+        object FloatAnimation2: TFloatAnimation
+          Enabled = True
+          Duration = 10.000000000000000000
+          Loop = True
+          PropertyName = 'RotationAngle.Y'
+          StartValue = 0.000000000000000000
+          StopValue = 359.000000000000000000
+        end
+        object Grid3D1: TGrid3D
+          Marks = 1.000000000000000000
+          Frequency = 1.000000000000000000
+          LineColor = claSlategray
+          Position.Z = -2.000000000000000000
+          Width = 4.099999904632568000
+          Height = 4.099999904632568000
+          Depth = 0.001000000047497451
+          HitTest = False
+          VisibleContextMenu = False
+        end
+        object Grid3D2: TGrid3D
+          Marks = 1.000000000000000000
+          Frequency = 1.000000000000000000
+          LineColor = claSlategray
+          Position.Y = 2.000000000000000000
+          RotationAngle.X = 90.000000000000000000
+          Width = 4.099999904632568000
+          Height = 4.099999904632568000
+          Depth = 0.001000000047497451
+          HitTest = False
+          VisibleContextMenu = False
+          Quanternion = '(0.70710676908493,0,0,0.70710676908493)'
+        end
+        object Grid3D3: TGrid3D
+          Marks = 1.000000000000000000
+          Frequency = 1.000000000000000000
+          LineColor = claSlategray
+          Position.Y = -2.000000000000000000
+          RotationAngle.X = 90.000000000000000000
+          Width = 4.099999904632568000
+          Height = 4.099999904632568000
+          Depth = 0.001000000047497451
+          HitTest = False
+          VisibleContextMenu = False
+          Quanternion = '(0.70710676908493,0,0,0.70710676908493)'
+        end
+        object Grid3D4: TGrid3D
+          Marks = 1.000000000000000000
+          Frequency = 1.000000000000000000
+          LineColor = claSlategray
+          Position.Z = 2.000000000000000000
+          Width = 4.099999904632568000
+          Height = 4.099999904632568000
+          Depth = 0.001000000047497451
+          HitTest = False
+          VisibleContextMenu = False
+        end
+        object Grid3D5: TGrid3D
+          Marks = 1.000000000000000000
+          Frequency = 1.000000000000000000
+          LineColor = claSlategray
+          Position.X = 2.000000000000000000
+          RotationAngle.Y = 90.000000000000000000
+          Width = 4.099999904632568000
+          Height = 4.099999904632568000
+          Depth = 0.001000000047497451
+          HitTest = False
+          VisibleContextMenu = False
+          Quanternion = '(0,0.70710676908493,0,0.70710676908493)'
+        end
+        object Grid3D6: TGrid3D
+          Marks = 1.000000000000000000
+          Frequency = 1.000000000000000000
+          LineColor = claSlategray
+          Position.X = -2.000000000000000000
+          RotationAngle.Y = 90.000000000000000000
+          Width = 4.099999904632568000
+          Height = 4.099999904632568000
+          Depth = 0.001000000047497451
+          HitTest = False
+          VisibleContextMenu = False
+          Quanternion = '(0,0.70710676908493,0,0.70710676908493)'
+        end
+      end
+    end
+    object Light1: TLight
+      Color = claWhite
+      LightType = Directional
+      SpotCutOff = 180.000000000000000000
+      Position.X = -7.494535923004150000
+      Position.Y = -5.105115890502930000
+      RotationAngle.X = 313.606384277343800000
+      RotationAngle.Y = 18.971349716186520000
+      RotationAngle.Z = 4.719841003417969000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Quanternion = 
+        '(-0.38193815946579,0.169022768735886,0.0139321302995086,0.908493' +
+        '459224701)'
+    end
+  end
+  object Pie1: TPie
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie2: TPie
+    Position.X = 74.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie3: TPie
+    Position.X = 132.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie4: TPie
+    Position.X = 190.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie5: TPie
+    Position.X = 248.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie6: TPie
+    Position.X = 306.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie7: TPie
+    Position.X = 364.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie8: TPie
+    Position.X = 422.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie9: TPie
+    Position.X = 480.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object Pie10: TPie
+    Position.X = 538.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    StartAngle = -90.000000000000000000
+    EndAngle = 359.000000000000000000
+  end
+  object TrackBar1: TTrackBar
+    CanParentFocus = True
+    Max = 50000000.000000000000000000
+    Orientation = Horizontal
+    Position.X = 16.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 572.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+  end
+  object Button2: TButton
+    Position.X = 929.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    Text = 'Stop'
+    OnClick = Button2Click
+  end
+  object CheckBox2: TCheckBox
+    Tag = 1
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 203.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Text = '2'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox3: TCheckBox
+    Tag = 2
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 230.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = '3'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox1: TCheckBox
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 20
+    Text = '1'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox4: TCheckBox
+    Tag = 3
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 257.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 19
+    Text = '4'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox5: TCheckBox
+    Tag = 4
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 284.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = '5'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox6: TCheckBox
+    Tag = 5
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 311.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = '6'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox7: TCheckBox
+    Tag = 6
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 338.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = '7'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox8: TCheckBox
+    Tag = 7
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 365.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = '8'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox9: TCheckBox
+    Tag = 8
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = '9'
+    OnChange = CheckBox1Change
+  end
+  object CheckBox10: TCheckBox
+    Tag = 9
+    IsChecked = True
+    Position.X = 929.000000000000000000
+    Position.Y = 419.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = '10'
+    OnChange = CheckBox1Change
+  end
+end
